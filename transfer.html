@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>转账</title>
+   
+</head>
+<body>
+	
+	<div class="login rst shouji">
+		<form>			
+			<div class="locgin_i shouji_1">
+				<ul class="ulist">						
+					<li class="group">
+							<label class="label" for="phone"></label>
+							<div class="controls">
+							<i>金额</i>
+							<input type="number" placeholder="输入金额"  class="txt">
+							</div>
+					</li>
+					<li class="group">
+							<label class="label" for="phone"></label>
+							<div class="controls">
+							<i>ID</i>
+							<input type="number" placeholder="输入对方ID"  class="txt">
+							</div>
+					</li>
+					
+				</ul>
+			</div>
+			<div class="locgin_i">
+				<input type="submit" value="立即转账"  />
+			</div>
+		</form>
+	</div>
+	<script>
+		/*获取验证码*/
+var isPhone = 1;
+function getCode(e){
+	checkPhone(); //验证手机号码
+	if(isPhone){
+		resetCode(); //倒计时
+	}else{
+		$('#phone').focus();
+	}
+	
+}
+//验证手机号码
+function checkPhone(){
+	var phone = $('#phone').val();
+	var pattern = /^1[0-9]{10}$/;
+	isPhone = 1;
+	if(phone == '') {
+		alert('请输入手机号码');
+		isPhone = 0;
+		return;
+	}
+	if(!pattern.test(phone)){
+		alert('请输入正确的手机号码');
+		isPhone = 0;
+		return;
+	}
+}
+//倒计时
+function resetCode(){
+	$('#J_getCode').hide();
+	$('#J_second').html('60');
+	$('#J_resetCode').show();
+	var second = 60;
+	var timer = null;
+	timer = setInterval(function(){
+		second -= 1;
+		if(second >0 ){
+			$('#J_second').html(second);
+		}else{
+			clearInterval(timer);
+			$('#J_getCode').show();
+			$('#J_resetCode').hide();
+		}
+	},1000);
+}
+	</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>个人中心</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/font.css" />
+    <script type="text/javascript" src="js/jquery.js" ></script>
+    <script type="text/javascript" src="js/public.js" ></script>
+</head>
+<body style="background: #f4f4f4;">
+<style>
+	.phone{background: #fff;}
+	.phone ul li{width: 100%;padding:5px 10px;box-sizing: border-box;border-bottom: 1px solid #eee;overflow: hidden;}
+	.phone ul li input{padding: 10px;padding-left: 25%;box-sizing: border-box;border: 0px;;}
+	.phone ul li span{position: absolute;margin-top:11px;}
+	.phone ul li select{border: 0px;width:75%;float:right;padding: 10px 0;}
+	.phone ul li input[type="submit"]{width: 100%;padding-left: 0px;text-align: center;background: #007AFF;border-radius: 5px;color: #fff;}
+</style>
+	<h1 class="h1"><button class="iconfont icon-xiangzuo1" onclick="javascript:window.history.back(-1);"></button>充值话费</h1>
+	<div class="phone">
+		<ul>
+			<li><span>输入号码:</span><input type="text" placeholder="输入充值号码"/></li>
+			<li><span>选择金额:</span><select>
+				<option>选择金额</option>
+				<option>10元</option>
+				<option>50元</option>
+				<option>100元</option>
+			</select></li>
+			<li><span>输入密码:</span><input type="password" placeholder="输入密码"/></li>
+			<li><input type="submit"/></li>
+		</ul>
+	</div>	
+	<div id="footer"></div>
+</body>
+</html>

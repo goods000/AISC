@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>兑换</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" href="css/font.css" />
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js" ></script>
+    <script type="text/javascript" src="js/public.js" ></script>
+</head>
+<body>
+	<h1 class="h1"><button class="iconfont icon-xiangzuo1" onclick="javascript:window.history.back(-1);"></button>存入智能钱包<a href="exchange_record.html">存入记录</a></h1>
+	<div class="tixian shouji shouji_1">
+		<div class="exchange_in">
+			<h1>请选择币种存入</h1>
+			<select>
+				<option>选择类型</option>
+				<option>USDT</option>
+				<option>AISC</option>
+			</select>
+			<h1>请输入要兑换的数量</h1>
+			<div class="exchang_di" style="overflow: hidden;">
+				<input type="number" placeholder="输入数量" style="border-radius: 0px;" />
+				<p><span>AISC：54.2154</span><span>USDT：100.2121</span></p>
+			</div>
+			<h1>请输入二级密码</h1>
+			<div class="exchang_di" style="overflow: hidden;">
+				<input type="password" placeholder="请输入二级密码" style="border-radius: 0px;" />
+			</div>
+			
+			
+			<input class="tiijiao" type="button" value="提交" />
+		</div>
+		<!--<p>温馨提示：除法定节假日外，提现会在24小时内到您的银行卡内，注意查收</p>-->
+	</div>
+	<div id="footer"></div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>消费套餐</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/font.css" />
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js" ></script>
+    <script type="text/javascript" src="js/public.js" ></script>
+</head>
+<style>
+	input{-webkit-appearance: !important;}
+</style>
+<body>
+	<h1 class="h1"><button class="iconfont icon-xiangzuo1" onclick="javascript:window.history.back(-1);"></button>购物车<a class="bianjia"><span>编辑</span><p class="wcp">完成</p></a></h1>
+	<div class="gouwuc">
+		<ul id="checkBoxList">
+			<li>
+				<div class="daxu"><input name="fav" type="checkbox"/></div>
+				<i><img src="img/cpt.jpg"/></i>
+				<div class="right_wc">
+					<h1>的傻了多久啦</h1>
+					<div class="slgm">
+	    				<span>￥123.21</span>
+					  	<input class="addBtn add" type="button" value="+" />
+						<input class="join-money" type="number" value="1">
+						<input class="addBtn min" type="button" value="-" />					
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="daxu"><input name="fav" type="checkbox"/></div>
+				<i><img src="img/cpt.jpg"/></i>
+				<div class="right_wc">
+					<h1>的傻了多的傻了多久啦的傻了多久啦的傻了多久啦的傻了多久啦的傻了多久啦的傻了多久啦的傻了多久啦的傻了多久啦的傻了多久啦的傻了多久啦久啦</h1>
+					<div class="slgm">
+	    				<span>￥123.21</span>
+					  	<input class="addBtn add" type="button" value="+" />
+						<input class="join-money" type="number" value="1">
+						<input class="addBtn min" type="button" value="-" />					
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="daxu"><input name="fav" type="checkbox"/></div>
+				<i><img src="img/cpt.jpg"/></i>
+				<div class="right_wc">
+					<h1>的傻了多久啦</h1>
+					<div class="slgm">
+	    				<span>￥123.21</span>
+					  	<input class="addBtn add" type="button" value="+" />
+						<input class="join-money" type="number" value="1">
+						<input class="addBtn min" type="button" value="-" />					
+					</div>
+				</div>
+			</li>
+			<div class="ccos">
+				 <input type="checkbox" id="ss" title="0" value="全选" />全选  
+				 <div class="ccos_right">					  
+					 <button>结 算</button>
+					 <span>总计：￥265.21</span>
+				 </div>
+				 <div class="shanchu_right">
+				 	<a href="">删除</a>
+				 </div>
+			</div>
+		</ul>
+	</div>
+	<div id="footer"></div>
+<script>
+$(".bianjia").click(function(){
+	$(".shanchu_right").toggle();
+	$(".wcp").toggle();
+});
+
+var t = $(".join-money");
+var m = $(".allMoney").text();
+var mm = $(".allMoney");
+$(function(){
+$(".add").click(function() {
+    t.val(parseInt(t.val()) + 1); //点击加号输入框数值加1
+});
+$(".min").click(function(){
+    t.val(parseInt(t.val())-1); //点击减号输入框数值减1
+    if(t.val()<=0){
+        t.val(parseInt(t.val())+1); //最小值为1
+    }
+});
+
+});
+
+        var  i=0;
+        $(function(){ 
+              $("#ss").click( 
+                function (){                
+                  $("input[name='fav']").prop("checked","checked");  
+                  if(i==1){                    
+                       $("input[name='fav']").prop("checked",false);                      
+                  }
+                  i++;
+                  if(i>1){                    
+                    i=0;
+                  } 
+                  
+                } 
+              );  
+           }
+      );
+
+</script>
+</body>
+</html>

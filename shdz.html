@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>收货地址</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+	    <script type="text/javascript" src="js/jquery-1.11.3.min.js" ></script>
+	</head>
+	<body>
+		<div class="shdz">
+			<ul>
+				<li class="li_sc"><a href="#">
+					<i>姓名：少林佛祖威少</i><em>联系电话：1383838438</em>
+					<p>地址：肯定撒四大皆空大家id洒几滴阿斯顿阿三</p></a>
+					<div class="bjsc">
+						<a onclick="showPage('dzbj')"><i class="iconfont icon-dianping"></i>编辑</a>
+						<a class="sc" href="#"><i class="iconfont icon-shanchu"></i>删除</a>
+					</div>
+				</li>
+			</ul>
+			<a class="xzdz" onclick="showPage('dzbj')">新增地址</a>
+			
+		</div>
+		<div id="dzbj" class="wrap a screen-right">
+		    <nav class="c-nav">
+		        <h1 class="h1"><button class="iconfont icon-xiangzuo1" onclick="hidePage('dzbj')"></button>修改地址</h1>
+		    </nav>
+		    <div class="container"></div>
+        </div>
+		<script>
+			$(document).ready(function(){
+				$(".sc").click(function(){
+					$(".li_sc").remove();
+				})
+			})
+		</script>
+		<div id="footer"></div>
+	</dody>
+</html>

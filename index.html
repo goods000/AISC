@@ -1,0 +1,147 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>个人中心</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" href="css/font.css" />
+    <script type="text/javascript" src="js/jquery.js" ></script>
+    <script type="text/javascript" src="js/public.js" ></script>
+   
+</head>
+<style>
+	.bottom_nav dl dd:nth-child(4) a .dier{display: block !important;}
+	.bottom_nav dl dd:nth-child(4) a .diyi{display: none !important;}
+	.bottom_nav dl dd:nth-child(4) a span{color: #d6a236;}
+</style>
+<body >
+	  
+	<div style="width:100vw;overflow: hidden;">
+		
+		<div class="paeder_index">
+			<h1>A I S C</h1>
+			<header class="parerd_nav">
+				<i><img src="img/ETH.png"/></i>
+				<p>
+					<span>3345678<s></s></span>
+					<b >ID 号：105548</b>
+					<em>手机号：135107547885</em>
+				</p>
+				<a class="dengji" href="personal.html" >
+					<s class="iconfont icon-shezhi1"></s> 设置
+				</a>
+			</header>
+		</div>
+		
+		<div class="colount">
+			<!--<div class="colount_top">
+				<ul >
+					<li><a onclick="showPage('shopp_list')"><i><img src="img/t_1.png"/></i>订单</a></li>
+					<li><a href="dianpu.html"><i><img src="img/t_2.png"/></i>店铺升级</a></li>
+					<li><a onclick="showPage('zichan')"><i><img src="img/t_3.png"/></i>我的资产</a></li>
+					<li><a onclick="showPage('zijing')"><i><img src="img/t_4.png"/></i>资金报表</a></li>
+				</ul>
+			</div>-->
+			<div class="colount_nav">
+				<ul style="margin-top:30px">					
+					<li><a href="team.html"><em><img src="img/an_1.png"/></em><u>我的团队</u><i class="iconfont icon-gengduo1"></i></a></li>
+					<li><a onclick="alert('暂未开放，敬请期待！')"><em><img src="img/an_2.png"/></em><u>我的奖励</u><i class="iconfont icon-gengduo1"></i></a></li>
+					<li><a href="wallet.html"><em><img src="img/an_3.png"/></em><u>我的钱包</u><i class="iconfont icon-gengduo1"></i></a></li>				
+					<li><a href="qrcode.html"><em><img src="img/an_4.png"/></em><u>邀请二维码</u><i class="iconfont icon-gengduo1"></i></a></li>
+					<li><a onclick="alert('暂未开放，敬请期待！')"><em><img src="img/an_5.png"/></em><u>我的套餐</u><i class="iconfont icon-gengduo1"></i></a></li>
+					<li><a href="opinion.html"><em><img src="img/an_6.png"/></em><u>意见反馈</u><i class="iconfont icon-gengduo1"></i></a></li>
+					<!--<li><a onclick="showPage('money_record')"><em><img src="img/an_7.png"/></em><u>充币记录</u><i class="iconfont icon-gengduo1"></i></a></li>
+					<li><a onclick="showPage('top_record')"><em><img src="img/an_8.png"/></em><u>提币记录</u><i class="iconfont icon-gengduo1"></i></a></li>
+					<li><a onclick="showPage('earnings_record')"><em><img src="img/an_4.png"/></em><u>收益记录</u><i class="iconfont icon-gengduo1"></i></a></li>
+					<li><a onclick="showPage('address')"><em><img src="img/an_2.png"/></em><u>钱包地址</u><i class="iconfont icon-gengduo1"></i></a></li>
+					<li><a onclick="showPage('personal')"><em><img src="img/an_9.png"/></em><u>公告通知</u><i class="iconfont icon-gengduo1"></i></a></li>
+					<li><a onclick="showPage('personal')"><em><img src="img/an_10.png"/></em><u>个人资料</u><i class="iconfont icon-gengduo1"></i></a></li>-->
+					
+				</ul>
+				
+				<a class="out" href="#">退 出 登 录</a>
+			</div>
+		</div>
+	</div>
+	<div id="exchange_record" class="wrap a screen-right">
+		<nav class="c-nav">
+		    <h1 class="h1"><button class="iconfont icon-xiangzuo1" onclick="hidePage('exchange_record')"></button>兑换记录</h1>
+		</nav>
+	<div class="container"></div>
+    </div>
+    <div id="earnings_record" class="wrap a screen-right">
+		<nav class="c-nav">
+		    <h1 class="h1"><button class="iconfont icon-xiangzuo1" onclick="hidePage('earnings_record')"></button>收益记录</h1>
+		</nav>
+	<div class="container"></div>
+    </div>
+	<div id="top_record" class="wrap a screen-right">
+		<nav class="c-nav">
+		    <h1 class="h1"><button class="iconfont icon-xiangzuo1" onclick="hidePage('top_record')"></button>提币记录</h1>
+		</nav>
+	<div class="container"></div>
+    </div>
+	<div id="money_record" class="wrap a screen-right">
+		<nav class="c-nav">
+		    <h1 class="h1"><button class="iconfont icon-xiangzuo1" onclick="hidePage('money_record')"></button>充币记录</h1>
+		</nav>
+	<div class="container"></div>
+    </div>
+	<div id="personal" class="wrap a screen-right">
+		<nav class="c-nav">
+		    <h1 class="h1"><button class="iconfont icon-xiangzuo1" onclick="hidePage('personal')"></button>个人资料</h1>
+		</nav>
+	<div class="container"></div>
+    </div>
+    <div id="team" class="wrap a screen-right">
+		<nav class="c-nav">
+		    <h1 class="h1"><button class="iconfont icon-xiangzuo1" onclick="hidePage('team')"></button>我的团队</h1>
+		</nav>
+	<div class="container"></div>
+    </div>
+    <div id="tixian_record" class="wrap a screen-right">
+		<nav class="c-nav">
+		    <h1 class="h1"><button class="iconfont icon-xiangzuo1" onclick="hidePage('tixian_record')"></button>提现记录</h1>
+		</nav>
+		<div class="container"></div>
+    </div>
+    <div id="shopp_list" class="wrap a screen-right" >
+		<nav class="c-nav">
+		    <h1 class="h1"><button class="iconfont icon-xiangzuo1" onclick="hidePage('shopp_list')"></button>订单</h1>
+		</nav>
+		<div class="container"></div>
+    </div>
+    <div id="zichan" class="wrap a screen-right">
+		<nav class="c-nav">
+		    <h1 class="h1" ><button class="iconfont icon-xiangzuo1" onclick="hidePage('zichan')"></button>我的资产</h1>
+		</nav>
+		<div class="container"></div>
+    </div>
+    <div id="zijing" class="wrap a screen-right">
+		<nav class="c-nav">
+		    <h1 class="h1"><button class="iconfont icon-xiangzuo1" onclick="hidePage('zijing')"></button>资金报表</h1>
+		</nav>
+		<div class="container"></div>
+    </div>
+    <div id="address" class="wrap a screen-right">
+		<nav class="c-nav">
+		    <h1 class="h1"><button class="iconfont icon-xiangzuo1" onclick="hidePage('address')"></button>我的钱包地址</h1>
+		</nav>
+		<div class="container"></div>
+    </div>
+    <div id="qrcode" class="wrap a screen-right">
+		<nav class="c-nav">
+		    <h1 class="h1"><button class="iconfont icon-xiangzuo1" onclick="hidePage('qrcode')"></button>邀请二维码</h1>
+		</nav>
+		<div class="container"></div>
+    </div>
+	<div id="footer"></div>
+</body>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js" ></script>
+ <script src="js/jquery.i18n.properties.min.js"></script>
+    <script src="js/language.js"></script>
+</html>

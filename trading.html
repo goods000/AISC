@@ -1,0 +1,115 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>记录</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" href="css/font.css" />
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js" ></script>
+    <script type="text/javascript" src="js/public.js" ></script>
+    <script type="text/javascript" src="js/tab_wo.js" ></script>
+    <script src="js/leftTime.min.js"></script>
+    <style>
+    	
+	.trading{background: url(img/trading.jsp.jpg);background-size: 100% 100%;}
+.h1{background: #004d40 !important;}
+.tradingdiv .trading_h2{width: 94%;margin:10px auto;padding-left: 10px;border-left: 5px solid #fff;box-sizing: border-box;font-size: 16px;font-weight: 500;margin-top:20px;}
+.suocang_ul li p i{width: 33%;display: block;float: left;margin-right: 10px;;}
+.suocang_ul li p img{width: 100%;display: block;}
+.suocang_ul li{padding: 10px;;}
+.tradingdiv .suocang_ul li div{overflow: hidden;margin:0px;padding:10px 0px;;}
+.trading_dd{border-bottom: 1px solid #004d40;}
+.tradingdiv .suocang_ul li p{float: left;}
+.tradingdiv .suocang_ul li div h2{text-align: left;width: 100%;font-weight: 500;}
+.tradingdiv .suocang_ul li div h2 span{text-align:left;}
+.tradingdiv .suocang_ul li div h3{text-align: right;width: 100%;font-weight: 500;}
+.tradingdiv .suocang_ul li div span:nth-child(1){border-right: 0px;}
+.tradingdiv .suocang_ul li div span{float: right;text-align: right;display: block;width: 100%;margin-top:5px;color: #9bc2bb;margin-bottom: 5px;;}
+.tradingdiv .suocang_ul li div a{border:1px solid #bdfff4;color: #bdfff4;padding: 5px 20px;border-radius: 5px;margin-top:5px;}
+.tradingdiv .suocang_ul li{margin: 5% auto;}
+.wocaogou{position: fixed;width: 100vw;background: #fff;z-index: 99999;border-radius: 5px 5px 0 0;overflow: hidden;bottom: -200%;left: 0px;
+transition:0.5s;}
+.wocaogou h1{background: #004d40;color: #fff;text-align: center;padding: 10px;font-weight: 500;font-size: 18px;}
+.wocaogou ul li span{float: left;color: #333;}
+.wocaogou ul li p{float: right;color: #333;}
+.wocaogou ul li{overflow: hidden;padding:10px 10px;width: 90%;margin: auto;}
+.wocaogou ul li input{width: 100%;padding:15px 10px;box-sizing: border-box;background: #e4f0ee;border: 0px;border-radius: 5px;margin: auto;display: block;}
+.wocaogou .tiijiao{border: 0px;background: #189b85 !important;}
+.trading_beg{background: rgba(0,0,0,0.5);width: 100vw;height: 100vh;position: fixed;z-index:9999;top:0px;left: 0px;display: none;}
+
+    </style>
+</head>
+<body>
+	<h1 class="h1"><s data-lang="jiaoyi">交易</s><a data-lang="dingang" href="market_record.html">订单</a></h1>
+	<div class="record">
+			<div class="dingdan tab-cont">
+				<div class="tab-cont_wrap">
+					<div class="item tradingdiv">
+						<div class="licai_header trading">
+							<p data-lang="label_match_price">总 资 产</p>
+							<h1>12580.10086 HHj</h1>
+							<a href="#" class="tiijiao guadan" data-lang="lijiaoguadan">立即挂卖</a>
+						</div>
+						<h2 class="trading_h2" data-lang="guandan">挂卖列表</h2>
+						<ul class="suocang_ul">
+							<li>
+								<div class="trading_dd"><p><i><img src="img/usdt.png"/></i>ETH</p><span>2019-03-09 16:12</span></div>
+								<div><h2><span data-lang="weituo">委托数量</span>30000.2121</h2><h3><span data-lang="danjia">单价</span>14542.23</h3></div>
+								<div><span><s data-lang="shengyu">剩余数量：</s>9854878.1221</span><span><a href="javascript:;" class="goumai" data-lang="goumai">购买</a></span></div>
+							</li>
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="wocaonima">
+				<div class="wocaogou trading_goumai">
+					<h1 data-lang="goumai">购 买</h1>
+					<ul>
+						<li><span data-lang="shengyu">剩余数量：</span><p>21545.21ETH</p></li>
+						<li><span data-lang="danjia">单价：</span><p>4512.21RMB</p></li>
+						<li><span data-lang="dakuanjiage">打款价格：</span><p>0.00</p></li>
+						<li><input data-lang="goumaishul" type="number" placeholder="输入购买数量"/></li>
+						<li><input data-lang="Money" type="password" placeholder="输入资金密码"/></li>
+						<li><button class="tiijiao" data-lang="quedinggoumai">确定购买</button></li>
+					</ul>
+				</div>
+				<div class="wocaogou trading_guadan">
+					<h1 data-lang="label_new_psd">挂 单</h1>
+					<ul>
+						<li><span data-lang="label_match_price">总资产：</span><p>21545.21ETH</p></li>
+						<li><span data-lang="danjia">单价：</span><p>4512.21RMB</p></li>
+						<li><select><option>选择收款卡号</option><option>1313215452123213211</option><option>1313215452123213211</option></select></li>
+						<li><input type="number" data-lang="shuruguaimai" placeholder="输入挂卖数量"/></li>
+						<li><input type="password" data-lang="Money" placeholder="输入资金密码"/></li>
+						<li><button class="tiijiao" data-lang="quedinggoumai">确定购买</button></li>
+					</ul>
+				</div>
+				<div class="trading_beg"></div>
+			</div>
+	</div>
+	<script>
+		$(".trading_beg").click(function(){
+			$(".trading_beg").fadeOut(500);
+			$(".trading_goumai").css({"bottom":"-200%"})
+		});
+		$(".goumai").click(function(){
+			$(".trading_beg").fadeIn(500);
+			$(".trading_goumai").css({"bottom":"0%"})
+		});
+		$(".trading_beg").click(function(){
+			$(".trading_beg").fadeOut(500);
+			$(".trading_guadan").css({"bottom":"-200%"})
+		});
+		$(".guadan").click(function(){
+			$(".trading_beg").fadeIn(500);
+			$(".trading_guadan").css({"bottom":"0%"})
+		});
+	</script>
+	<div id="footer"></div>
+	
+
+</body>
+</html>

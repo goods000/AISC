@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>pjax</title>
+    <link rel="stylesheet" href="static/css/reset.css">
+    <link rel="stylesheet" href="static/css/c-global.css">
+    <style>
+
+        .screen-top{
+            position: absolute;
+            top: 0;
+            transform: translateY(-100%);
+            transition: 1s;
+        }
+        .screen-top.active{
+            transform: translateY(0);
+        }
+
+        .screen-right{
+            position: absolute;
+            top: 0;
+            transform: translateX(100%);
+            transition: 1s;
+        }
+        .screen-right.active{
+            transform: translateX(0);
+        }
+
+        .screen-bottom{
+            position: absolute;
+            top: 0;
+            transform: translateY(100%);
+            transition: 1s;
+        }
+        .screen-bottom.active{
+            transform: translateY(0);
+        }
+
+        .screen-left{
+            position: absolute;
+            top: 0;
+            transform: translateX(-100%);
+            transition: 1s;
+        }
+        .screen-left.active{
+            transform: translateX(0);
+        }
+
+
+        html,body{
+            position: fixed;  /*防止移动端 overflow: hidden; 属性不管用*/
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            background-color: #f5f5f5;
+        }
+
+        .wrapContainer{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .wrap{
+            width: 100%;
+            height: 100%;
+            overflow: scroll;
+        }
+
+        .wrap.a{
+            background-color: red;
+        }
+        .wrap.b{
+            background-color: green;
+        }
+        .wrap.c{
+            background-color: pink;
+        }
+        .wrap.d{
+            background-color: deeppink;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="wrapContainer">
+        <div class="wrap">
+            <nav class="c-nav">
+                首页
+                <a class="c-nav-back"></a>
+            </nav>
+            <div class="c-cell-wrap">
+                <a onclick="showPage('index')" class="c-cell c-border-bottom">
+                    <span class="c-cell-bd">上页面</span>
+                    <span class="c-cell-arrow right"></span>
+                </a>
+              
+            </div>
+        </div>
+        <div id="index" class="wrap a screen-top">
+            <nav class="c-nav">
+                上
+                <a class="c-nav-back" onclick="hidePage('index')"></a>
+            </nav>
+            <div class="container"></div>
+        </div>
+    </div>
+   <script type="text/javascript" src="js/jquery-1.11.3.min.js" ></script>
+    <script>
+        /*
+        * framework
+        *
+        * <div id='pageName' class='screen-top'>
+        *      <div class='container'>
+        *      </div>
+        * </div>
+        *
+        * 总结：
+        *   1.父 div 设置
+        *       id='(默认等于要加载的页面的名字)'
+        *       class='(screen-top、screen-right、screen-bottom、screen-left)'
+        *           (1).screen-top：   页面从上而下
+        *           (2).screen-right： 页面从右而左
+        *           (3).screen-bottom：页面从下而上
+        *           (4).screen-left：  页面从左而右
+        *   2.父 div 添加空白 div，且这个 div 的类名为 container（加载的页面将放置其中）
+        *   3.显示页面 showPage('父 div 的 id 名')
+        *   4.隐藏页面 hidePage('父 div 的 id 名')
+        * **/
+
+        function showPage(pageName) {
+            $("#"+pageName).addClass('active');
+            $("#"+pageName+" .container").load(pageName+'.html');
+        }
+
+        function hidePage(pageName){
+            $('#'+pageName).removeClass('active');
+        }
+    </script>
+</body>
+</html>

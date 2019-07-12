@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<li>
+					
+					<div class="senc_cnu">
+						<i class="iconfont icon-duanxin"></i>
+						<h1><span class="text_email">绑定邮箱</span></h1>
+						<div class="sencuritp_p">
+							<p class="iconfont icon-dagou">{$user['email']?"<b class='text_Isbinding'>已绑定</b>":"<b class='text_unbounded'>未绑定</b>"}</p>
+							<if condition="$user['email'] eq ''">
+								<span class="text_Isnotset">未设置</span>
+							<else/>
+							    <span><em class="text_mailbox">您绑定的邮箱为：</em>{$user['email']}</span>
+						    </if>
+						</div>
+						<a href="javascript:void(0);" onclick="email()">{$user['email']?"<b class='text_Modify'>修改</b>":"<b class='text_unbounded'>未绑定</b>"}</a>
+					</div>
+				</li>
+				<li>
+					
+					<div class="senc_cnu">
+						<i class="iconfont icon-srsjhm"></i>
+						<h1><span class="text_Bindingmobilephone">绑定手机</span></h1>
+						<div class="sencuritp_p">
+
+							<!-- <span>您绑定的手机为：<br>{$user['phone']}</span> -->
+							<if condition="$user['phone'] eq ''">
+                                <p class="iconfont icon-dagou text_unbounded">未绑定</p>
+								<span class="text_unbounded">未绑定</span>
+							<else/>
+                                <p class="iconfont icon-dagou text_Isbinding">已绑定</p>
+							    <span><!-- <em class="text_phone">您绑定的手机为：</em> -->{$user['phone']}</span>
+						    </if>
+						</div>
+						<a href="javascript:void(0);" onclick="phone()">{$user['phone']?"<b class='text_Modify'>修改</b>":"<b class='text_unbounded'>未绑定</b>"}</a>
+					</div>
+				</li>
+				<li>
+					<if condition="$user['id_auth'] neq 5">
+						<div class="senc_cnu">
+							<i class="iconfont icon-julebu2"></i>
+							<h1><span class="text_Realname">实名认证</span></h1>
+							<div class="sencuritp_p">
+								<p class="iconfont icon-dagou">{$user['id_text']}</p>
+								<span>{$user['id_text']} <eq name="user.id_auth" value="7">{$user['msg']}</eq></span>
+							</div>
+							<a href="{:U('User/name_cert')}" class="text_certification">去认证</a>
+						</div>
+				   <else/>
+				       
+						<div class="senc_cnu">
+							<i class="iconfont icon-julebu2"></i>
+							<h1 class="text_Realname">实名认证</h1>
+							<div class="sencuritp_p">
+								<p class="iconfont icon-dagou text_certified">已认证</p>
+								<span class="text_amount">交易金额大于2000需要进行实名认证</span>
+							</div>
+						</div>
+				   </if>
+				</li>
+				<li>
+					
+					<div class="senc_cnu">
+						<i class="iconfont icon-mima1"></i>
+						<h1><span class="text_Login">登陆密码</span></h1>
+						<div class="sencuritp_p">
+							<p class="iconfont icon-jinzhi-yin text_beens">已设置</p>
+							<span class="text_passwordis">登陆密码在登录时使用。</span>
+						</div>
+						<a href="javascript:void(0);" onclick="security()" class="text_Modify">修改</a>
+					</div>
+				</li>
+				<li>
+					
+					<div class="senc_cnu">
+						<i class="iconfont icon-yanzhengma1"></i>
+						<h1><span class="text_Securitypassword">安全密码</span></h1>
+						<div class="sencuritp_p">
+							<p class="iconfont icon-dagou">{$user['safepassword']?"<b class='text_beens'>已设置</b>":"<b class='text_Isnotset'>未设置</b>"}</p>
+							<span class="text_fundschange">资金变动时，需先验证安全密码。</span>
+						</div>
+						<a href="javascript:void(0);" onclick="trade()">{$user['safepassword']?"<b class='text_Modify'>修改</b>":"<b class='text_Setupthe'>设置</b>"}</a>
+					</div>
+				</li>
+
+				<li>
+					
+					<div class="senc_cnu">
+						<i class="iconfont icon-xinyongqia"></i>
+						<h1><span class="">银行卡</span></h1>
+						<div class="sencuritp_p">
+							<p class="iconfont icon-dagou">
+							<if condition="$user.bankcard_set eq 0">
+								<b class='text_Isnotset'>未设置</b>
+							<else/>
+								<b class='text_beens'>已设置</b>
+							</if>	
+							</p>
+							<!-- <p class="iconfont icon-dagou">{$user['safepassword']?"<b class='text_been'>已设置</b>":"<b class='text_Isnotset'>未设置</b>"}</p> -->
+							<span class="">挂单前需要绑定银行卡信息。</span>
+						</div>
+
+						<a href="javascript:void(0);" onclick="bankcard()">
+						<if condition="$user.bankcard_set eq 0">
+								<b class='text_Setupthe'>设置</b>
+							<else/>
+								<b class='text_Modify'>修改</b>
+							</if>
+						</a>		
+						<!-- <a href="javascript:void(0);" onclick="trade()">{$user['safepassword']?"<b class='text_Modify'>修改</b>":"<b class='text_Setupthe'>设置</b>"}</a> -->
+					</div>
+
+					
+				</li>
+				<li>
+					<div class="senc_cnu">
+						<i class="iconfont icon-fenxiang"></i>
+						<h1><span class="">邀请链接</span></h1>
+						<div class="sencuritp_p">
+								<input id="biao1" readonly="readonly" style="border:0px;background: none;width: 80%;line-height: 50px;" type="text" value="https://haixicarve.com{:U('Home/Register/index/int_code/'.$_SESSION['user']['userid'])}">
+								<a onclick="erweima()" class="iconfont icon-erweima" style="color: #fff;font-size: 20px;"></a>
+						</div>	
+						<a><input style="border:0px;background: none;" type="button" onClick="copyUrl2()" value="复制链接" /></a>
+					</div>
+					
+
+				</li>
+
+
+				<li>
+					<div class="senc_cnu">
+						<i class="iconfont icon-fenxiang"></i>
+						<h1><span class="">推荐人</span></h1>
+						<div class="sencuritp_p">
+								<input id="biao1" readonly="readonly" style="border:0px;background: none;width:50%;line-height: 50px;" type="text" value="{$int_man}">
+								<p style="width: 50%;">一级团队:{$yiji_td}</p>
+						</div>
+						
+						<a><b style="font-weight: 500;">二级团队:{$erji_td}</b></a>
+					</div>
+				</li>
+				<li>
+					<div class="senc_cnu">
+						<i class="iconfont icon-fenxiang"></i>
+						<h1><span class="">节点用户</span></h1>
+						<div class="sencuritp_p">
+								<input id="biao1" readonly="readonly" style="border:0px;background: none;width:50%;line-height: 50px;" type="text" value="{$int_man}">
+						</div>
+						
+						<a href="{:U('User/jiedian')}"><b style="font-weight: 500;">节点信息</b></a>
+					</div>
+				</li>

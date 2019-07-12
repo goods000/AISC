@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>银行卡绑定</title>
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js" ></script>
+</head>
+<body>
+	<div class="tixian shouji">
+		<div class="locgin_i shouji_1">
+				<ul class="ulist">
+					<li class="group">
+							<div class="controls">
+							<i>钱包名称</i>
+							<input type="text"  placeholder="请输入钱包备注"  class="txt">
+							</div>
+					</li>
+					<li class="group">
+						<div class="controls">
+						<i>钱包地址</i>
+						<input type="text" placeholder="请输入钱包地址" id="code" class="txt">
+						</div>
+					</li>
+				</ul>
+				<input class="tiijiao" type="submit" value="提现"  />
+			</div>
+	</div>
+	<script>
+	var wait=60;  
+			function time(o) {  
+			        if (wait == 0) {  
+			            o.removeAttribute("disabled");            
+			            o.value="获取验证码";  
+			            wait = 60;  
+			        } else {  
+			            o.setAttribute("disabled", true);  
+			            o.value="重新发送(" + wait + ")";  
+			            wait--;  
+			            setTimeout(function() {  
+			                time(o)  
+			            },  
+			            1000)  
+			        }  
+			    }  
+			document.getElementById("btn_s").onclick=function(){time(this);};
+	</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>我的地址</title>
+		<link rel="stylesheet" href="js/need/layer.css" />
+		<script type="text/javascript" src="js/jquery-1.11.3.min.js" ></script>
+		<script type="text/javascript" src="js/public.js" ></script>
+		<script type="text/javascript" src="js/layer/layer.js" ></script>
+	</head>
+	<style>
+		.wfwb ul li{width: 90%;margin: auto;padding:7% 3%;background:url(img/aq1.png);background-size:100% 100%;border-radius: 5px;box-sizing: border-box;margin-top:10px;}
+		.wfwb ul li p{text-align: left;color: #fff;font-size:12px;margin-top:10px;}
+		.wfwb ul li .xiangx span{font-size: 20px;color: #fff;}
+		.wfwb ul li .xiangx>i{font-style:normal;color: #fff;margin-left: 10px;font-weight: 300;}
+		.wfwb ul li .xiangx a{float: right;color: #fff;margin: 0 10px;font-weight: 300;font-size: 14px;}
+		.wfwb ul li .xiangx a i{color: #fff;}
+		.tianjian{display: block;width: 90%;margin: auto;background:#f4f4f4;padding: 5%;border-radius: 5px;box-sizing: border-box;box-shadow:3px 3px 8px #ccc;margin-top:20px;}
+		.tianjian i{font-size: 20px;text-align: center;display: block;margin: auto;}
+		.wfwb>i{width: 40%;display: block;margin:10% auto;font-style: normal;text-align: center;font-size:16px;}
+		.wfwb>i img{width: 100%;display: block;margin-bottom: 10px;}
+	</style>
+	<body>
+		<div class="wfwb">
+			<i><img src="img/aq2.png"/>暂无钱包信息</i>
+			<ul>
+				<li class="dom">
+					<div class="xiangx">
+						<span>我的比特币钱包</span>
+						<a href="javascript:;" class="shanchu"><i class="iconfont icon-shanchu"></i> 删除</a>
+						<a href="javascript:;" class="shanchu"><i class="iconfont icon-log-theme"></i> 修改</a>
+					</div>
+					<p>0x1c6984a4688412b5e3f7617517d213fa6c983f54</p>
+				</li>
+				<li class="dom">
+					<div class="xiangx">
+						<span>我的比特币钱包</span>
+						<a href="javascript:;" class="shanchu"><i class="iconfont icon-shanchu"></i> 删除</a>
+						<a href="javascript:;" class="shanchu"><i class="iconfont icon-log-theme"></i> 修改</a>
+					</div>
+					<p>0x1c6984a4688412b5e3f7617517d213fa6c983f54</p>
+				</li>
+				<li class="dom">
+					<div class="xiangx">
+						<span>我的比特币钱包</span>
+						<a href="javascript:;" class="shanchu"><i class="iconfont icon-shanchu"></i> 删除</a>
+						<a href="javascript:;" class="shanchu"><i class="iconfont icon-log-theme"></i> 修改</a>
+					</div>
+					<p>0x1c6984a4688412b5e3f7617517d213fa6c983f54</p>
+				</li>
+				<li class="dom">
+					<div class="xiangx">
+						<span>我的比特币钱包</span>
+						<a href="javascript:;" class="shanchu"><i class="iconfont icon-shanchu"></i> 删除</a>
+						<a href="javascript:;" class="shanchu"><i class="iconfont icon-log-theme"></i> 修改</a>
+					</div>
+					<p>0x1c6984a4688412b5e3f7617517d213fa6c983f54</p>
+				</li>
+				
+			</ul>
+			<a class="tianjian tiijiao" onclick="showPage('addres')" style="padding: 15px !important;" >
+				立即添加
+			</a>
+		</div>
+		<div id="addres" class="wrap a screen-right">
+			<nav class="c-nav">
+				    <h1 class="h1"><button class="iconfont icon-xiangzuo1" onclick="hidePage('addres')"></button>钱包地址</h1>
+				</nav>
+			<div class="container"></div>
+    	</div>
+		<script>
+		
+			$(".shanchu").click(function(){
+				$(this).parent().parent().remove();				
+			});
+			
+		</script>
+	</body>
+</html>

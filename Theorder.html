@@ -1,0 +1,261 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>记录</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" href="css/font.css" />
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js" ></script>
+    <script type="text/javascript" src="js/public.js" ></script>
+    <script type="text/javascript" src="js/tab_wo.js" ></script>
+    <script src="js/leftTime.min.js"></script>
+    <script type="text/javascript" src="js/layer/layer.js" ></script>
+    <style>
+    	.tab-title a{width: 50%;display:block;text-align: center;float: left;padding: 10px 0;color: #42c2a8;}
+    	.tab-title{overflow: hidden;width: 100%;margin: auto;padding: 10px 0;}
+    	.item-cur{border-bottom:1px solid #fff !important;color: #fff !important;}
+	.bottom_nav dl dd:nth-child(2) a .dier{display: block !important;}
+	.bottom_nav dl dd:nth-child(2) a .diyi{display: none !important;}
+	.bottom_nav dl dd:nth-child(2) a span{color: #1f1f1f;}
+	.trading{background: url(img/trading.jsp.jpg);background-size: 100% 100%;}
+.h1{background: #004d40 !important;}
+.tradingdiv .trading_h2{width: 94%;margin:10px auto;padding-left: 10px;border-left: 5px solid #fff;box-sizing: border-box;font-size: 16px;font-weight: 500;margin-top:20px;}
+.suocang_ul li p i{width: 33%;display: block;float: left;margin-right: 10px;;}
+.suocang_ul li{padding: 10px;;}
+.tradingdiv .suocang_ul li div{overflow: hidden;margin:0px;padding:10px 0px;;}
+.trading_dd{border-bottom: 1px solid #004d40;}
+.tradingdiv .suocang_ul li p{float: left;font-size: 14px;width: 70%;text-align: left;}
+.tradingdiv .suocang_ul li div h2{text-align: left;width: 100%;font-weight: 500;}
+.tradingdiv .suocang_ul li div h2 span{text-align:left;}
+.tradingdiv .suocang_ul li div h3{text-align: right;width: 100%;font-weight: 500;}
+.tradingdiv .suocang_ul li div span:nth-child(1){border-right: 0px;}
+.tradingdiv .suocang_ul li .trading_dd span{width: 30%;margin: 0px;}
+.tradingdiv .suocang_ul li div span{float: right;text-align: right;display: block;width: 100%;margin-top:5px;color: #9bc2bb;margin-bottom: 5px;;}
+.tradingdiv .suocang_ul li div a{border:1px solid #bdfff4;color: #bdfff4;padding: 5px 20px;border-radius: 5px;margin-top:5px;}
+.tradingdiv .suocang_ul li{margin: 5% auto;}
+.wocaogou{position: fixed;width: 100vw;background: #fff;z-index: 99999;border-radius: 5px 5px 0 0;overflow: hidden;bottom: -200%;left: 0px;
+transition:0.5s;}
+.wocaogou h1{background: #004d40;color: #fff;text-align: center;padding: 10px;font-weight: 500;font-size: 18px;}
+.wocaogou ul li span{float: left;color: #333;}
+.wocaogou ul li p{float: right;color: #333;}
+.wocaogou ul li{overflow: hidden;padding:10px 10px;width: 90%;margin: auto;}
+.wocaogou ul li input{width: 100%;padding:15px 10px;box-sizing: border-box;background: #e4f0ee;border: 0px;border-radius: 5px;margin: auto;display: block;}
+.wocaogou .tiijiao{border: 0px;background: #189b85 !important;}
+.trading_beg{background: rgba(0,0,0,0.5);width: 100vw;height: 100vh;position: fixed;z-index:9999;top:0px;left: 0px;display: none;}
+.wocaop{border-bottom: 1px solid #004d40;}
+.a-upload {padding: 4px 10px;height: 100%;line-height: 20px; position: relative;cursor: pointer;color: #888;
+                      background: #fafafa;
+                      border: 1px solid #ddd;
+                      border-radius: 4px;
+                      overflow: hidden;
+                      display: inline-block;
+                      *display: inline;
+                      *zoom: 1
+                  }
+
+                  .a-upload  input {
+                      position: absolute;
+                      font-size: 100px;
+                      right: 0;
+                      top: 0;
+                      opacity: 0;
+                      filter: alpha(opacity=0);
+                      cursor: pointer
+                  }
+
+                  .a-upload:hover {
+                      color: #444;
+                      background: #eee;
+                      border-color: #ccc;
+                      text-decoration: none
+                  }
+
+                  /*表单校验自定义样式*/
+                  .error {
+                    /*padding-left: 80px;*/
+                    float: left;
+                    display: block;
+                    width: 80%;height: 2.2em;
+
+                    margin-left: 20%;
+
+                    line-height: 2.2em;
+
+                    font-weight: bold;
+
+                    color: red;
+                  }
+    </style>
+</head>
+<body>
+	<h1 class="h1"><button class="iconfont icon-xiangzuo1" onclick="javascript:window.history.back(-1);"></button><s data-lang="dingang">交易</s></h1>
+	<div class="record">
+		<div class="tab" js-tab="1">
+			<div>
+				<div class="tab-title">
+					<a href="javascript:;" class="item" data-lang="mairudingdan">买入订单</a>
+	  				<a href="javascript:;" class="item"data-lang="maichudingdan">卖出订单</a>
+				</div>
+			</div>
+			<div class="dingdan tab-cont">
+				<div class="tab-cont_wrap">
+					<div class="item tradingdiv">
+						<ul class="suocang_ul">
+							<li>
+								<div class="trading_dd"><p><s data-lang="dingdanh">订单号</s>：1322544542121545</p><span data-lang="">待上传凭证</span></div>
+								<div><h2><span data-lang="weituoshul">委托数量</span>30000.2121</h2><h3><span data-lang="">单价</span>14542.23</h3></div>
+								<div><h2><span data-lang="zongjia">总价</span>30000.2121</h2><h3><span data-lang="transaction_list">时间</span>2018-12-30 18:00</h3></div>
+								<div><span style="text-align: left;"><a href="javascript:;" class="guadan" data-lang="">查看信息</a></span><span><a href="javascript:;" class="goumai" data-lang="">上传凭证</a></span></div>
+							</li>
+							<li>
+								<div class="trading_dd"><p><s data-lang="dingdanh">订单号</s>：1322544542121545</p><span data-lang="">待上传凭证</span></div>
+								<div><h2><span data-lang="weituoshul">委托数量</span>30000.2121</h2><h3><span data-lang="">单价</span>14542.23</h3></div>
+								<div><h2><span data-lang="zongjia">总价</span>30000.2121</h2><h3><span data-lang="transaction_list">时间</span>2018-12-30 18:00</h3></div>
+								<div><span style="text-align: left;"><a href="javascript:;" class="guadan" data-lang="">查看信息</a></span><span><a href="javascript:;" class="goumai" data-lang="">上传凭证</a></span></div>
+							</li>
+						</ul>
+					</div>
+					<div class="item tradingdiv">
+						<ul class="suocang_ul">
+							<li>
+								<div class="trading_dd"><p><s data-lang="dingdanh">订单号</s>：1322544542121545</p><span data-lang="">待上传凭证</span></div>
+								<div><h2><span data-lang="weituoshul">委托数量</span>30000.2121</h2><h3><span data-lang="">单价</span>14542.23</h3></div>
+								<div><h2><span data-lang="zongjia">总价</span>30000.2121</h2><h3><span data-lang="transaction_list">时间</span>2018-12-30 18:00</h3></div>
+								<div><span style="text-align: left;"><a href="javascript:;" onclick="chakan()" data-lang="chankanpingz">查看凭证</a></span><span><a href="javascript:;" class="queding" data-lang="quedingshoukuan">确定收款</a></span></div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="wocaonima">
+				<div class="wocaogou trading_goumai">
+					<h1 data-lang="shangchuan">上传打款凭证</h1>
+					<ul>
+						<li><div class="line" style="height: 80px;text-align: center;">
+			                 <a href="javascript:;" class="a-upload">
+			                    <input type="file" name="xdaTanFileImg" id="xdaTanFileImg" onchange="xmTanUploadImg(this)" accept="image/*"/>
+			                    <img style="width: 80px;" id="xmTanImg"/>
+			                    <div style="width: 80px;height:80px;" id="xmTanDiv"></div>
+			                 </a>
+			            </div></li>
+						<li><button class="tiijiao" data-lang="shangchuan">上传凭证</button></li>
+					</ul>
+				</div>
+				<div class="wocaogou trading_guadan">
+					<h1 data-lang="chankanpingz">查看凭证</h1>
+					<ul>
+						<li></li>
+						<li></li>
+						<li><span data-lang="xinming">姓名：</span><p>大强哥</p></li>
+						<li><span data-lang="kaihuhang">开户行：</span><p>中国银行</p></li>
+						<li><span data-lang="yinghangka">银行卡号：</span><p>2145 4512 1245 451254</p></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+				<div class="trading_beg"></div>
+			</div>
+	</div>
+	<div id="footer"></div>
+	<script>
+	function chakan(){
+		layer.open({
+  type: 1,
+  skin: 'layui-layer-rim', //加上边框
+  area: ['100%', '100vh'], //宽高
+  content: '<img src="licai_header3.jpg" style="width:100%;display:block;"/>'
+});
+	}
+	$(function(){
+  $('[js-tab=1]').tab();
+
+});
+$(".trading_beg").click(function(){
+			$(".trading_beg").fadeOut(500);
+			$(".trading_goumai").css({"bottom":"-200%"})
+		});
+		$(".goumai").click(function(){
+			$(".trading_beg").fadeIn(500);
+			$(".trading_goumai").css({"bottom":"0%"})
+		});
+		$(".trading_beg").click(function(){
+			$(".trading_beg").fadeOut(500);
+			$(".trading_guadan").css({"bottom":"-200%"})
+		});
+		$(".guadan").click(function(){
+			$(".trading_beg").fadeIn(500);
+			$(".trading_guadan").css({"bottom":"0%"})
+		});
+		
+		$('.but').click(function(){
+
+          var club_img = $('#xdaTanFileImg_2').val();
+
+          if (club_img=='') {
+              alert('请上传手持身份证！');
+              return false;
+          }
+
+          var idcard_img_1 = $('#xdaTanFileImg').val();
+
+          if (idcard_img_1=='') {
+              alert('请上传身份证正面！');
+              return false;
+          }
+
+          var idcard_img_2 = $('#xdaTanFileImg').val();
+
+          if (idcard_img_2=='') {
+              alert('请上传身份证反面！');
+              return false;
+          }
+          loads('较大图片提交较久，请勿关闭网页');
+          $('form').submit();
+   });
+   function xmTanUploadImg(obj) {
+        var file = obj.files[0];
+
+        console.log(obj);console.log(file);
+        console.log("file.size = " + file.size);  //file.size 单位为byte
+
+        var reader = new FileReader();
+
+        //读取文件过程方法
+        reader.onloadstart = function (e) {
+            console.log("开始读取....");
+        }
+        reader.onprogress = function (e) {
+            console.log("正在读取中....");
+        }
+        reader.onabort = function (e) {
+            console.log("中断读取....");
+        }
+        reader.onerror = function (e) {
+            console.log("读取异常....");
+        }
+        reader.onload = function (e) {
+            console.log("成功读取....");
+
+            var size = file.size/1024;
+            var size = size/1024;
+
+            if (size>4) {
+              alert('上传图片不能大于4MB，请重新选择！');return false;
+            }
+
+            var img = document.getElementById("xmTanImg");
+            img.src = e.target.result;
+            //或者 img.src = this.result;  //e.target == this
+        }
+
+        reader.readAsDataURL(file)
+    }
+
+</script>
+
+</body>
+</html>

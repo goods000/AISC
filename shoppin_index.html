@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>首页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<script src="js/swiper.min.js"></script>
+	<script type="text/javascript" src="js/jquery-1.11.3.min.js" ></script>
+	<script type="text/javascript" src="js/public.js" ></script>
+	<link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/css.css">
+	<link rel="stylesheet" href="css/font.css" />
+</head>
+<style>
+	.bottom_nav dl dd:nth-child(1) a .dier{display: block !important;}
+	.bottom_nav dl dd:nth-child(1) a .diyi{display: none !important;}
+	.bottom_nav dl dd:nth-child(1) a span{color: #d6a236;}
+</style>
+<body>
+	<!--<div style="width: 100vw;height: 100vh;background: rgba(0,0,0,0.5);position: fixed;z-index: 9999;top: 0;">
+		<div class="xxze" style="width: 70%;border-radius: 10px;background: #fff;margin: auto;margin-top:50%;padding:40px 20px;">
+			<h2 style="color: #677ee9;font-size:20px;text-align: center;font-weight: 500;margin-bottom: 20px;">选择币种</h2>
+			<select class="xuanze" style="width: 100%;border:0px;border-bottom: 1px solid #ddd;padding: 10px;">
+				<option>选择币种</option>
+				<option>USDT</option>
+				<option>EOS</option>
+				<option>ETH</option>
+			</select>
+			<input style="width: 100% !important;border-radius: 50px;padding: 10px !important;background: #677ee9 !important;color: #fff !important;margin-top: 20px !important;" type="button" value="确定" />
+		</div>
+	</div>-->
+	<div class="container">
+	<div class="header_h">
+		A I S C
+	</div>
+    <!-- Swiper -->
+    <div class="swiper-container swiper-container_sy">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="img/banner_1.jpg"/></div>
+            <div class="swiper-slide"><img src="img/banner_1.jpg"/></div>             
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+    <div class="xxk">
+    	<span class="iconfont icon-shengyin"></span>
+    	<marquee class="dia" scrollAmount=2 >恭喜共享新零售商场开放成功！</marquee>
+    </div>
+    <!--<div class="recommended">
+    	<div class="hhj">
+    		<div class="hhj_jiage">
+    			<h2>HHJ数量<p>10056.1254</p></h2>
+    			<span>1HHJ ≈ 15.31 RMB</span>
+    		</div>
+    		<div class="hhj_anniu">
+    			<a onclick="showPage('exchange')"><i class="iconfont icon-zhuanhuan1"></i><u>兑 换</u></a>
+    			<a onclick="showPage('tixian')"><i class="iconfont icon-ziyuanldpi"></i><u>提 现</u></a>
+    		</div>
+    	</div>
+    </div>-->
+   	<div class="hangqing">
+   		
+   		<div class="bizhong">
+   			<div class="bizhong_top">
+   				<h1 class="hang_h1">币 种</h1>
+   				<div class="bizhong_top_t">
+   					<h3><i><img src="img/usdt.png"/></i><span>USDT</span></h3><P>12580.10547869</P>
+   				</div>
+   				<div class="bizhong_top_b">
+   					<p>1 USDT ≈ 5.12 RMB</p>
+   					<p>≈ 186554.1312 RMB</p>
+   				</div>
+   			</div>
+   			<div class="bizhong_bottom">
+   				<a href="charge.html"><i class="iconfont icon-xiazai3"></i><span> 充 币</span></a>
+   				<a href="exchange.html"><i class="iconfont icon-shangchuan"></i><span> 存 入</span></a>
+   			</div>
+   		</div>
+   		<div class="bizhong">
+   			<div class="bizhong_top">
+   				<div class="bizhong_top_t">
+   					<h3><i><img src="img/ETH.png"/></i><span>ETH</span></h3><P>12580.10547869</P>
+   				</div>
+   				<div class="bizhong_top_b">
+   					<p>1 USDT ≈ 5.12 RMB</p>
+   					<p>≈ 186554.1312 HHJ</p>
+   				</div>
+   			</div>
+   			<div class="bizhong_bottom">
+   				<a href="money.html"><i class="iconfont icon-xiazai3"></i><span> 提 币</span></a>
+   				<a href="exchange.html"><i class="iconfont icon-shangchuan"></i><span> 存 入</span></a>
+   			</div>
+   		</div>
+   	</div>
+		 
+	</div>
+
+    <div id="footer"></div>
+
+    <script>
+  
+    
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        slidesPerView: 1,
+        paginationClickable: true,
+        loop: true,
+        autoplay: 3500,
+        autoplayDisableOnInteraction: false
+        
+    });
+    </script>
+
+</body>
+</html>

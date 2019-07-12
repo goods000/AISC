@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	</head>
+	<link rel="stylesheet" href="css/css.css" />
+	<style>
+		body{background:#17473f;}
+		.header_gamebill{background: #1c6055;overflow: hidden;padding: 5px 0;}
+		.wopoqiu{background: url(img/ccc.png);background-size: 100% 100%;position: absolute;width: 35% !important;left: 32.5%;top:0px;padding: 5px 0;}
+		.header_gamebill div{text-align: center;}
+		.header_gamebill p{color: #fff;}
+		.header_gamebill span{color: #fff;font-size: 12px;}
+		.header_gamebill div{width:30%;}
+		.header_gamebill .header_left{float: left;}
+		.header_gamebill .header_right{float: right;}
+		.wopoqiu i img{width: 100%;}
+		.wopoqiu i{display: block;width: 15%;margin:0 10%;}
+		.wopoqiu p{display:flex;margin:0 10px;text-align: center;font-size: 30px;;}
+		.game_conter{display: flex;margin: 10% auto;width: 96%;}
+		.game_conter div{width: 100%;text-align: center;padding: 10px 0;}
+		.game_conter .conter_left s{color: #a1e5da;}
+		.game_conter .conter_left p{color: #a1e5da;text-align: left;}
+		.game_conter .conter_right{background: #0c332c;text-align: center;border-radius: 5px;display: flex;}
+		.game_conter .conter_right s{color: #a1e5da;padding: 10px 0;display: block;width: 100%;}
+		.game_conter .conter_right span{color: #fff;padding: 10px 0;width: 100%;}
+		.shuju table td{color: #fff;text-align: center;}
+		.shuju table th{color: #a1e5da;font-weight: 500;}
+		.shuju table th,.shuju table td{border-top:1px solid #209280;padding: 10px 5px;border-left:1px solid #209280;}
+		.shuju table{width: 96%;border-right:1px solid #209280;border-bottom:1px solid #209280;margin: auto;}
+		.shuju table tr td:nth-child(1){text-align: left;color: #a1e5da;background: #195047;padding: 10px 10px;}
+		.shuju table tr th:nth-child(1){text-align: left;background: #195047;padding: 10px 10px;}
+		.wcimg{width: 30%;display: block;position: absolute;left:35%;top:15%;}
+	</style>
+	<body>
+		<div class="game_bill">
+			<img class="yingl wcimg" src="img/ying.png"/>
+			<img class="shul wcimg" src="img/shu.png"/>
+			<div class="header_gamebill">
+				<div class="header_left">
+					<p>己方</p>
+					<span>2019.03.06 20:00</span>
+				</div>
+				<div class="wopoqiu">
+					<p><i><img src="img/zuo.png"/></i>VS<i><img src="img/you.png"/></i></p>
+					<span>已匹配</span>
+				</div>
+				<div class="header_right">
+					<p>对方</p>
+					<span>2019.03.06 20:00</span>
+				</div>
+			</div>
+			<div class="game_conter">
+				<div class="conter_left"><p><s>竞猜币种</s>：ETH</p><p><s>时间段</s>：10分钟</p></div>
+				<div class="conter_right"><s>开奖结果:</s><span>1245.1254</span></div>
+			</div>
+			<div class="shuju">
+				<table cellpadding="0" cellspacing="0">
+					<tr>
+						<th>账号</th>
+						<th>己方(100001)</th>
+						<th>对方(100001)</th>
+					</tr>
+					<tr>
+						<td>竞猜</td>
+						<td>多</td>
+						<td>空</td>
+					</tr>
+					<tr>
+						<td>竞猜值</td>
+						<td>54635.1554</td>
+						<td>54635.1554</td>
+					</tr>
+					<tr>
+						<td>对冲数量</td>
+						<td>200.00HHJ</td>
+						<td>200.00HHJ</td>
+					</tr>
+				</table>
+			</div>
+			<a onclick="shux()">刷新</a>
+		</div>
+		<script>
+			function shux(){
+				window.parent.location.reload();
+			}
+		</script>
+	</body>
+</html>

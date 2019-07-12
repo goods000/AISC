@@ -1,0 +1,83 @@
+ <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>记录</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" href="css/font.css" />
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js" ></script>
+    <script type="text/javascript" src="js/public.js" ></script>
+    <script type="text/javascript" src="js/tab_wo.js" ></script>
+    <script type="text/javascript" src="js/layer/layer.js" ></script>
+    <script src="js/leftTime.min.js"></script>
+    <style>
+    	.tab-title a{width: 50%;display:block;text-align: center;float: left;padding: 10px 0;background:#e5eaff;color: #677ee9;}
+    	.tab-title{overflow: hidden;width: 60%;margin: auto;padding: 10px 0;}
+    	.item-cur{background: #677ee9 !important;color: #fff !important;}
+    	
+	.layui-layer-dialog .layui-layer-content{color: #333;}
+
+    </style>
+</head>
+<body>
+	<h1 class="h1"><button class="iconfont icon-xiangzuo1" onclick="javascript:window.history.back(-1);"></button>我的钱包</h1>
+	<div class="record">
+		<div class="tab" js-tab="1">
+			<div class="dingdan tab-cont">
+				<div class="tab-cont_wrap">
+					<div class="item">
+						<ul class="suocang_ul">
+							<li>
+								<p>智能钱包<img src="img/flgd.png"/></p>
+								<h1>10000 RMB</h1>
+								<span>≈100.2212 AISC</span>
+								<div><span onclick="location.href='exchange.html'"><img src="img/t_1.png"/> 存入</span><span onclick="jieyue()"><img src="img/t_2.png"/> 解约</span></div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+	function jieyue(){
+		layer.open({
+  type: 2,
+  title: 'layer mobile页',
+  shadeClose: true,
+  shade: 0.8,
+  area: ['380px', '90%'],
+  content: 'wc.html' //iframe的url
+}); 
+	}
+$(function(){
+  $('[js-tab=1]').tab();
+
+});
+
+		$(function(){
+			//日期倒计时,现在距离下面的日期
+			var data_show = $('.data-box');
+			for(var i=1;i<=data_show.length;i++){
+				function_name($("#dateShow"+i).data("date"),"#dateShow"+i);
+			}
+			// function_name('2018/02/22 23:45:24','.data-show-box');
+			// function_name('2018/02/20 21:43:55','.data-show-box');
+			function function_name(time,obj) {
+				$.leftTime(time,function(d){
+					if(d.status){
+						var $dateShow1=$(obj);
+						$dateShow1.find(".d").html(d.d);
+						$dateShow1.find(".h").html(d.h);
+						$dateShow1.find(".m").html(d.m);
+						$dateShow1.find(".s").html(d.s);
+					}
+				});
+			}
+		});
+</script>
+
+</body>
+</html>
